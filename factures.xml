@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="factures.xsd"?>
+<celler>
+	<productes>
+		<producte codi="B1" preu="1.50">Vino Blanco de 1 litro(s)</producte>
+		<producte codi="B2" preu="2.50">VinoBblanco de 2 litro(s)</producte>
+		<producte codi="B3" preu="3.50">Vino Blanco de 3 litro(s)</producte>
+		<producte codi="B5" preu="5.50">Vino Blanco de 5 litro(s)</producte>
+		<producte codi="R1" preu="1.50">Vino Rosado de 1 litro(s)</producte>
+		<producte codi="R2" preu="2.50">Vino Rosado de 2 litro(s)</producte>
+		<producte codi="R3" preu="3.50">Vino Rosado de 3 litro(s)</producte>
+		<producte codi="R5" preu="5.50">Vino Rosado de 5 litro(s)</producte>
+		<producte codi="T1" preu="1.50">Vino Tinto de 1 litro(s)</producte>
+		<producte codi="T2" preu="2.50">Vino Tinto de 2 litro(s)</producte>
+		<producte codi="T3" preu="3.50">Vino Tinto de 3 litro(s)</producte>
+		<producte codi="T5" preu="5.50">Vino Tinto de 5 litro(s)</producte>
+	</productes>
+	<factures>
+		<factura numero="000001">
+			<comprador codi="C00010" />
+			<unitats codi="B3">1</unitats>
+			<unitats codi="B5">5</unitats>
+			<unitats codi="R5">2</unitats>
+			<unitats codi="T3">1</unitats>
+			<unitats codi="T5">1</unitats>
+		</factura>
+		<factura numero="000002">
+			<comprador codi="C00005" />
+			<unitats codi="B2">3</unitats>
+			<unitats codi="B3">5</unitats>
+			<unitats codi="R1">4</unitats>
+			<unitats codi="T1">1</unitats>
+			<unitats codi="T2">3</unitats>
+		</factura>
+	</factures>
+	<clients>
+		<client codi="C00010">
+			<nom>Juan Jose</nom>
+			<cognoms>Merino Dominguez</cognoms>
+			<contacte>
+				<telefon teltipus="fix" telambit="feina">862 796 668</telefon>
+				<telefon teltipus="mobil" telambit="feina">660 884 131</telefon>
+			</contacte>
+		</client>
+		<client codi="C00005">
+			<nom>Nicolas</nom>
+			<cognoms>Guzman Iglesias</cognoms>
+			<contacte>
+				<telefon teltipus="mobil" telambit="privat">736 403 329</telefon>
+			</contacte>
+		</client>
+	</clients>
+</celler>

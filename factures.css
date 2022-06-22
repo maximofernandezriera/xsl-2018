@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+
+}
+.pagina {
+     display: grid;
+     grid-template-columns: repeat(5, 42mm);
+     grid-template-rows: repeat(14, 2cm) 17mm;
+     background-color: #828282;
+     width: 21cm;
+     height: 29.7cm;
+     page-break-after: always;
+ }
+.empresa {
+    background-image: url("bathory2.png");
+    width: 500px;
+    height: 200px;
+    border: 2px solid black;
+    background-position: left;
+    margin: 20px;
+    grid-area: 1 / 1 / 3 / 6;
+}
+tr {
+    height: 30px;
+}
+.capCompres {
+    text-align: center;
+}
+.codi {
+    width: 60px;
+    text-align: center;
+}
+.unitats {
+    width: 60px;
+    text-align: center;
+}
+.preu {
+    width: 80px;
+    text-align: right;
+}
+.subtotal{
+    text-align: right;
+    width: 100px;
+}
+.total {
+    text-align: right;
+}
+.totalTag {
+    text-align: right;
+    background-color: #828282;
+}
+.numFactura {
+    margin: 20px;
+    font-family: Tahoma, sans-serif;
+    font-size: 10pt;
+    grid-area: 1 / 5 / 2 / 6;
+
+}
+.client {
+    margin: 20px;
+    background-color: #e2e2e2;
+    border: 2px solid black;
+    grid-area: 4 / 1 / 7 / 5;
+}
+.client td {
+    border: none;
+    padding: 4px;
+    font-family: Tahoma, sans-serif;
+    font-size: 12pt;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 200px;
+
+}
+.client tr td:first-of-type {
+    text-align: left;
+}
+.cap {
+    font-weight: bold;
+    border: 3px solid grey;
+}
+.client tr {
+
+}
+.compres {
+    margin: 20px;
+    grid-area: 7 / 1 / 11 / 6;
+}
+.compres td {
+    border: 1px solid black;
+    padding: 4px;
+    font-family: Tahoma, sans-serif;
+    font-size: 12pt;
+}
+.compres tr:nth-of-type(2n) {
+    background-color: aliceblue;
+}
+.compres tr:nth-of-type(2n+1) {
+    background-color:white;
+}
+.compres tr:first-of-type {
+    background-color: darkred;
+    color: wheat;
+}
+.compres tr:last-of-type {
+    border-collapse: collapse;
+}
+.firma {
+    width: 300px;
+    height: 100px;
+    margin-top: 40px;
+    margin-left: 20px;
+    padding: 5px 15px;
+    border: 2px solid black;
+    grid-area: 13 / 1 / 14 / 6;
+}

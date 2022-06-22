@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="celler">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="productes" />
+				<xs:element ref="clients" />
+				<xs:element ref="factures" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="productes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="producte" maxOccurs="12" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="clients">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="client" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="factures">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="factura" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="producte">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="codi" type="xs:ID" />
+					<xs:attribute name="preu" type="xs:decimal" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="client">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nom" type="nomtipus" />
+				<xs:element name="cognoms" type="nomtipus" />
+				<xs:element ref="contacte" />
+			</xs:sequence>
+			<xs:attribute name="codi" type="client_codi_tipus" />
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="client_codi_tipus">
+		<xs:restriction base="xs:ID">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nomtipus">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="contacte">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="telefon" maxOccurs="4" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="telefon">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="tipus" type="teltipus" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="teltipus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fix" />
+			<xs:enumeration value="mobil" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="telambit">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="feina" />
+			<xs:enumeration value="privat" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="factura">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="comprador" />
+				<xs:element ref="unitats" maxOccurs="12" />
+			</xs:sequence>
+			<xs:attribute name="numero" type="factura_numero_tipus" />
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="factura_numero_tipus">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="comprador">
+		<xs:complexType>
+			<xs:attribute name="codi" type="comprador_codi_tipus" />
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="comprador_codi_tipus">
+		<xs:restriction base="xs:IDREF">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="unitats">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:integer">
+					<xs:attribute name="codi" type="xs:IDREF" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

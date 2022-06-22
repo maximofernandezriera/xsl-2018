@@ -1,0 +1,20 @@
+<!ELEMENT celler (productes, clients, factures)>
+<!ELEMENT  productes (producte+)>
+    <!ELEMENT producte (#PCDATA)>
+    <!ATTLIST producte codi ID #REQUIRED>
+    <!ATTLIST producte preu (1.50|2.50|3.50|5.50) #REQUIRED> <!--si fos CDATA se pot escriure qualsevol cosa-->
+<!ELEMENT clients (client+)>
+    <!ELEMENT client (nom, cognoms, contacte)> <!--els elements han de seguir l'ordre del parentesi-->
+        <!ELEMENT nom (#PCDATA)>
+        <!ELEMENT cognoms (#PCDATA)>
+        <!ELEMENT contacte (telefon+)>
+        <!ELEMENT telefon (#PCDATA)>
+        <!ATTLIST telefon tipus (mobil|fix) #REQUIRED>
+    <!ATTLIST client codi ID #REQUIRED> <!--els ID han de començar per una lletra-->
+<!ELEMENT  factures (factura+)>
+    <!ELEMENT factura (comprador, unitats+)>
+        <!ELEMENT comprador EMPTY>
+        <!ATTLIST comprador codi IDREF #REQUIRED>
+        <!ELEMENT unitats (#PCDATA)>
+        <!ATTLIST unitats codi IDREF #REQUIRED>
+    <!ATTLIST factura numero CDATA #REQUIRED>
